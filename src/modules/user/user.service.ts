@@ -21,7 +21,7 @@ export class UserService {
   // 删除一个用户
   async del(id: string) {
     const res = await this.UserRepository.delete(id);
-    if (res && res.raw.affectedRows > 0) {
+    if (res && res.affected > 0) {
       return true;
     }
     return false;
